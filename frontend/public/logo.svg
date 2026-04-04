@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+    <defs>
+        <linearGradient id="zGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1E3A8A" /> <stop offset="100%" stop-color="#3B82F6" /> </linearGradient>
+
+        <linearGradient id="arrowGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#059669" /> <stop offset="100%" stop-color="#4ADE80" /> </linearGradient>
+
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="1.5" dy="2.5" stdDeviation="2" flood-color="#000000" flood-opacity="0.25"/>
+        </filter>
+
+        <mask id="arrowMask">
+            <rect width="100" height="100" fill="white" />
+            <path d="M 12 88 L 35 60 L 50 70 L 88 12" fill="none" stroke="black" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M 63 12 L 88 12 L 88 37" fill="none" stroke="black" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+        </mask>
+    </defs>
+
+    <polygon 
+        points="25,15 75,15 75,32 45,68 75,68 75,85 25,85 25,68 55,32 25,32" 
+        fill="url(#zGrad)" 
+        mask="url(#arrowMask)" 
+    />
+
+    <g filter="url(#shadow)">
+        <path 
+            d="M 12 88 L 35 60 L 50 70 L 88 12" 
+            fill="none" 
+            stroke="url(#arrowGrad)" 
+            stroke-width="8" 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+        />
+        <path 
+            d="M 63 12 L 88 12 L 88 37" 
+            fill="none" 
+            stroke="url(#arrowGrad)" 
+            stroke-width="8" 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+        />
+    </g>
+</svg>
