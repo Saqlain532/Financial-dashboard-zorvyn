@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SummaryCard from '../components/SummaryCard';
 import TimeChart from '../components/TimeChart';
 import CategorialVisualization from '../components/CategorialVisualization';
-import { Wallet, ArrowUpRight, ArrowDownRight } from 'lucide-react';
+import { Wallet, ArrowUpRight, ArrowDownRight, PiggyBank } from 'lucide-react';
 import { summaryStats, balanceTrend, spendingBreakdown } from '../assets/dummyData/OverviewData';
+import { dummyTransactions } from '../assets/dummyData/transactionData';
+import TransactionCard from '../components/TransactionCard';
 
 const Dashboard = () => {
   return (
@@ -14,7 +17,7 @@ const Dashboard = () => {
       </div>
 
       {/* Summary Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mb-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 mb-6">
         <SummaryCard
           title="Total Balance"
           amount={summaryStats.totalBalance}
@@ -36,15 +39,45 @@ const Dashboard = () => {
           trendUp={false}
           icon={ArrowDownRight}
         />
+        <SummaryCard
+          title="Total Savings"
+          amount={summaryStats.totalSavings || 0}
+          trend={5.6}
+          trendUp={true}
+          icon={PiggyBank}
+        />
       </div>
 
       {/* Charts Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-6 mb-8">
         <div className="lg:col-span-2">
           <TimeChart data={balanceTrend} />
         </div>
         <div className="lg:col-span-1">
           <CategorialVisualization data={spendingBreakdown} />
+        </div>
+      </div>
+
+      {/* Recent Transactions */}
+      <div className="mb-10">
+        <div className="flex items-center justify-between mb-5">
+          <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 tracking-tight">Recent Transactions</h2>
+          <Link 
+            to="/transactions" 
+            className="text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-500 dark:hover:text-blue-400 transition-colors"
+          >
+            View All
+          </Link>
+        </div>
+        <div className="flex flex-col gap-3">
+          {dummyTransactions.slice(-5).reverse().map((transaction) => (
+            <TransactionCard 
+              key={transaction.id} 
+              transaction={transaction} 
+              onUpdate={() => {}} 
+              onDelete={() => {}} 
+            />
+          ))}
         </div>
       </div>
     </main>

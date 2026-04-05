@@ -3,7 +3,7 @@ import { Search, Download, Filter } from 'lucide-react';
 
 const TransactionFiltering = ({ searchTerm, setSearchTerm, filterType, setFilterType, sortBy, setSortBy, onExport }) => {
     return (
-        <div className="flex flex-col lg:flex-row gap-4 justify-between items-center mb-6 bg-white dark:bg-zinc-950 p-4 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-sm">
+        <div className="flex flex-col lg:flex-row gap-4 justify-between items-center mb-6 bg-white dark:bg-zinc-900 p-4 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-sm">
             {/* Search Input */}
             <div className="relative w-full lg:w-1/3">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -14,7 +14,7 @@ const TransactionFiltering = ({ searchTerm, setSearchTerm, filterType, setFilter
                     placeholder="Search by merchant or category..." 
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-11 pr-4 py-2.5 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl text-sm text-zinc-900 dark:text-zinc-50 focus:outline-none focus:ring-2 focus:ring-zinc-900/10 dark:focus:ring-zinc-50/10 transition-shadow placeholder-zinc-400"
+                    className="w-full pl-11 pr-4 py-2.5 bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl text-sm text-zinc-900 dark:text-zinc-50 focus:outline-none focus:ring-2 focus:ring-zinc-900/10 dark:focus:ring-zinc-50/10 transition-shadow placeholder-zinc-400"
                 />
             </div>
 
@@ -24,7 +24,7 @@ const TransactionFiltering = ({ searchTerm, setSearchTerm, filterType, setFilter
                     <select 
                         value={filterType} 
                         onChange={(e) => setFilterType(e.target.value)}
-                        className="w-full appearance-none bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300 text-sm py-2.5 pl-4 pr-10 rounded-xl outline-none cursor-pointer focus:ring-2 focus:ring-zinc-900/10 dark:focus:ring-zinc-50/10"
+                        className="w-full appearance-none bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 text-sm py-2.5 pl-4 pr-10 rounded-xl outline-none cursor-pointer focus:ring-2 focus:ring-zinc-900/10 dark:focus:ring-zinc-50/10"
                     >
                         <option value="All">All Types</option>
                         <option value="income">Income Only</option>
@@ -37,7 +37,7 @@ const TransactionFiltering = ({ searchTerm, setSearchTerm, filterType, setFilter
                     <select 
                         value={sortBy} 
                         onChange={(e) => setSortBy(e.target.value)}
-                        className="w-full appearance-none bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300 text-sm py-2.5 pl-4 pr-10 rounded-xl outline-none cursor-pointer focus:ring-2 focus:ring-zinc-900/10 dark:focus:ring-zinc-50/10"
+                        className="w-full appearance-none bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 text-sm py-2.5 pl-4 pr-10 rounded-xl outline-none cursor-pointer focus:ring-2 focus:ring-zinc-900/10 dark:focus:ring-zinc-50/10"
                     >
                         <option value="date-desc">Newest First</option>
                         <option value="date-asc">Oldest First</option>

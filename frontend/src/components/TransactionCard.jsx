@@ -41,7 +41,7 @@ const TransactionCard = ({ transaction, onUpdate, onDelete }) => {
     };
 
     return (
-        <div className="flex items-center justify-between p-4 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+        <div className="flex items-center justify-between p-4 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl shadow-sm hover:shadow-md hover:border-zinc-300 dark:hover:border-zinc-700 hover:-translate-y-1 transition-all duration-300">
             <div className="flex items-center gap-4">
                 <div className={`p-3 rounded-xl ${isIncome ? 'bg-emerald-100/50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400' : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400'}`}>
                     <Icon className="w-5 h-5" />
@@ -50,7 +50,7 @@ const TransactionCard = ({ transaction, onUpdate, onDelete }) => {
                     {isEditing ? (
                         <input 
                             type="text" 
-                            className="font-semibold text-zinc-900 dark:text-zinc-50 bg-zinc-100 dark:bg-zinc-800 border focus:border-blue-500 border-zinc-200 dark:border-zinc-700 outline-none rounded py-0.5 px-2 w-full max-w-[180px] text-sm mb-1"
+                            className="font-semibold text-zinc-900 dark:text-zinc-50 bg-zinc-100 dark:bg-zinc-950 border focus:border-blue-500 border-zinc-200 dark:border-zinc-900 outline-none rounded py-0.5 px-2 w-full max-w-[180px] text-sm mb-1"
                             value={editData.merchant} 
                             onChange={e => setEditData({...editData, merchant: e.target.value})}
                         />
@@ -68,7 +68,7 @@ const TransactionCard = ({ transaction, onUpdate, onDelete }) => {
                 {isEditing ? (
                     <input 
                         type="number" 
-                        className="font-bold text-zinc-900 dark:text-zinc-50 bg-zinc-100 dark:bg-zinc-800 border focus:border-blue-500 border-zinc-200 dark:border-zinc-700 outline-none rounded py-0.5 px-2 w-20 sm:w-24 text-right text-lg"
+                        className="font-bold text-zinc-900 dark:text-zinc-50 bg-zinc-100 dark:bg-zinc-950 border focus:border-blue-500 border-zinc-200 dark:border-zinc-900 outline-none rounded py-0.5 px-2 w-20 sm:w-24 text-right text-lg"
                         value={editData.amount} 
                         onChange={e => setEditData({...editData, amount: e.target.value})}
                     />

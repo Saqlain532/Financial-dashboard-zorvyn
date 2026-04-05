@@ -26,13 +26,13 @@ export const textualInsights = [
 ];
 
 export const insightsTimeData = [
-  { month: 'Jan', balance: 14000 },
-  { month: 'Feb', balance: 12500 },
-  { month: 'Mar', balance: 16200 },
-  { month: 'Apr', balance: 13400 },
-  { month: 'May', balance: 19800 },
-  { month: 'Jun', balance: 25500 },
-  { month: 'Jul', balance: 27562 }
+  { month: 'Jan', balance: 14000, income: 4200, expense: 3100 },
+  { month: 'Feb', balance: 12500, income: 3800, expense: 5300 },
+  { month: 'Mar', balance: 16200, income: 6400, expense: 2700 },
+  { month: 'Apr', balance: 13400, income: 3900, expense: 6700 },
+  { month: 'May', balance: 19800, income: 8200, expense: 1800 },
+  { month: 'Jun', balance: 25500, income: 9500, expense: 3800 },
+  { month: 'Jul', balance: 27562, income: 7240, expense: 5178 }
 ];
 
 export const insightsCategoryData = [

@@ -4,7 +4,7 @@ import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from 'recha
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
         return (
-            <div className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-3 rounded-xl shadow-lg">
+            <div className="bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 p-3 rounded-xl shadow-lg">
                 <div className="flex items-center gap-2 mb-1">
                     <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: payload[0].payload.color }} />
                     <p className="text-sm font-medium text-zinc-500 dark:text-zinc-400">{payload[0].name}</p>
@@ -38,7 +38,7 @@ const CustomLegend = ({ payload }) => {
 
 const CategorialVisualization = ({ data }) => {
     return (
-        <div className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 shadow-sm h-full flex flex-col transition-colors">
+        <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 shadow-sm h-full flex flex-col hover:shadow-md hover:border-zinc-300 dark:hover:border-zinc-700 hover:-translate-y-1 transition-all duration-300">
             <div className="mb-2">
                 <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">Spending Breakdown</h3>
                 <p className="text-sm text-zinc-500 dark:text-zinc-400">Where your money goes</p>
